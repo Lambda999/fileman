@@ -388,8 +388,8 @@ if ($apiMode) {
               <span>{{ scope.row.name }}</span>
             </template>
           </el-table-column>
-          <el-table-column prop="type" label="类型" width="110" />
-          <el-table-column prop="mtime" label="修改时间" width="180" />
+          <el-table-column prop="type" label="类型" width="110"></el-table-column>
+          <el-table-column prop="mtime" label="修改时间" width="180"></el-table-column>
           <el-table-column label="大小" width="110">
             <template #default="scope">{{ scope.row.type === 'dir' ? '-' : scope.row.size }}</template>
           </el-table-column>
@@ -406,7 +406,7 @@ if ($apiMode) {
   </section>
 
   <el-dialog v-model="mkdirVisible" title="新建目录" width="420px">
-    <el-input v-model="newFolderName" placeholder="请输入目录名称，如 docs" />
+    <el-input v-model="newFolderName" placeholder="请输入目录名称，如 docs"></el-input>
     <div style="margin-top:8px;color:#909399;">将在 {{ currentPath ? '/' + currentPath : '/' }} 下创建</div>
     <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
       <el-button @click="mkdirVisible=false">取消</el-button>
