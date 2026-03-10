@@ -385,7 +385,8 @@ if ($apiMode) {
                 <folder v-if="scope.row.type==='dir'"></folder>
                 <document v-if="scope.row.type==='file'"></document>
               </el-icon>
-              <span>{{ scope.row.name }}</span>
+              <span v-if="scope.row.type==='dir'" style="color:#2563eb;cursor:pointer;font-weight:600;" @click.stop="enter(scope.row)">{{ scope.row.name }}</span>
+              <span v-if="scope.row.type==='file'">{{ scope.row.name }}</span>
             </template>
           </el-table-column>
           <el-table-column prop="type" label="类型" width="110"></el-table-column>
@@ -514,6 +515,9 @@ if ($apiMode) {
         currentPath.value = row.path;
         await fetchList();
       };
+
+
+
 
       const onTreeClick = async (node) => {
         currentPath.value = node.path || '';
