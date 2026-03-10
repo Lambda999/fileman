@@ -218,7 +218,7 @@ if ($apiMode) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FileMan - Vue3 + Element Plus</title>
-  <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-plus/dist/index.css" />
   <style>
     body {
       margin: 0;
@@ -257,7 +257,7 @@ if ($apiMode) {
         </div>
       </template>
 
-      <div style="margin-bottom: 10px; color:#606266;">当前路径：/{{ currentPath || '' }}</div>
+      <div style="margin-bottom: 10px; color:#606266;">当前路径：<span>{{ currentPath ? '/' + currentPath : '/' }}</span></div>
       <div>
         <el-tag class="path-tag" @click="goRoot">root</el-tag>
         <el-tag
@@ -287,8 +287,8 @@ if ($apiMode) {
         <el-table-column prop="name" label="名称" min-width="240">
           <template #default="scope">
             <el-icon style="margin-right:6px;vertical-align:middle;">
-              <folder v-if="scope.row.type==='dir'" />
-              <document v-else />
+              <folder v-if="scope.row.type==='dir'"></folder>
+              <document v-else></document>
             </el-icon>
             <span>{{ scope.row.name }}</span>
           </template>
@@ -319,9 +319,9 @@ if ($apiMode) {
     </el-dialog>
   </div>
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script src="https://unpkg.com/element-plus"></script>
-  <script src="https://unpkg.com/@element-plus/icons-vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/element-plus"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@element-plus/icons-vue"></script>
   <script>
     const { createApp, ref, computed, onMounted } = Vue;
     const { ElMessage, ElMessageBox } = ElementPlus;
