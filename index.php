@@ -408,10 +408,10 @@ if ($apiMode) {
   <el-dialog v-model="mkdirVisible" title="新建目录" width="420px">
     <el-input v-model="newFolderName" placeholder="请输入目录名称，如 docs" />
     <div style="margin-top:8px;color:#909399;">将在 {{ currentPath ? '/' + currentPath : '/' }} 下创建</div>
-    <template v-slot:footer>
+    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
       <el-button @click="mkdirVisible=false">取消</el-button>
-      <el-button type="primary" :loading="mkdirLoading" @click="createFolder">创建</el-button>
-    </template>
+      <el-button type="primary" :loading="mkdirLoading" @click="createFolder">确认创建</el-button>
+    </div>
   </el-dialog>
 </div>
 
